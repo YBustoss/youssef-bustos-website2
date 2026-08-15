@@ -24,6 +24,8 @@
 <meta name="twitter:description" content="Hecho con disciplina, cafeína y algo de neurociencia.">
 <meta name="twitter:image" content="foto-principal.jpg">
 
+
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -100,6 +102,21 @@
   .nav-social a:hover{color:var(--cyan-accent);}
   .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;}
   .burger span{width:24px;height:2px;background:var(--text-light);display:block;border-radius:2px;}
+
+  /* NAV COLLAPSE — el menú tiene bastantes enlaces, así que pasa a hamburguesa
+     antes de que se apriete en pantallas de laptop (no solo en móvil) */
+  @media (max-width: 1180px){
+    .nav-links{
+      position:fixed;top:64px;left:0;right:0;background:var(--navy-900);
+      flex-direction:column;align-items:flex-start;padding:24px;gap:18px;
+      border-bottom:1px solid rgba(255,255,255,.08);
+      transform:translateY(-140%);transition:transform .25s ease;z-index:40;
+      max-height:calc(100vh - 64px);overflow-y:auto;
+    }
+    .nav-links.open{transform:translateY(0);}
+    .nav-social{margin-left:0;}
+    .burger{display:flex;}
+  }
 
   /* HERO */
   .hero{
@@ -218,24 +235,27 @@
   .phat-gate p, .phat-unlocked p{color:var(--text-muted);margin-bottom:24px;}
   .phat-gate form{max-width:420px;margin:0 auto;text-align:left;}
   .phat-gate form label{color:var(--text-light);}
+  /* PHAT/Híbrido ahora viven en secciones oscuras: el CTA usa una tarjeta
+     "vidrio" translúcida para no fundirse con el fondo navy de la sección */
+  #phat-cta, #hybrid-cta{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);}
 
-  /* BECAS */
+  /* BECAS — sección clara: tarjetas y texto en tonos oscuros para contraste */
   .becas-tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:36px;}
   .becas-tab-label{
-    background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);color:var(--text-muted);
+    background:var(--cream-card);border:1px solid rgba(20,28,43,.1);color:var(--text-dark-muted);
     padding:9px 18px;border-radius:999px;font-size:.85rem;font-weight:700;
   }
   .becas-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-  .becas-col h3{color:var(--cyan-accent);font-size:1.05rem;margin-bottom:16px;}
+  .becas-col h3{color:var(--warm-dark);font-size:1.05rem;margin-bottom:16px;}
   .becas-col ul{display:flex;flex-direction:column;gap:12px;}
   .becas-col li{
-    background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:14px 16px;
+    background:var(--cream-card);border:1px solid rgba(20,28,43,.08);border-radius:12px;padding:14px 16px;
     transition:border-color .15s;
   }
-  .becas-col li:hover{border-color:var(--cyan-accent);}
-  .becas-col li a{font-weight:700;color:var(--text-light);font-size:.94rem;display:block;margin-bottom:4px;}
-  .becas-col li span{font-size:.8rem;color:var(--text-muted);}
-  .becas-disclaimer{margin-top:30px;font-size:.82rem;color:var(--text-muted);border-top:1px solid rgba(255,255,255,.1);padding-top:18px;}
+  .becas-col li:hover{border-color:var(--warm);}
+  .becas-col li a{font-weight:700;color:var(--text-dark);font-size:.94rem;display:block;margin-bottom:4px;}
+  .becas-col li span{font-size:.8rem;color:var(--text-dark-muted);}
+  .becas-disclaimer{margin-top:30px;font-size:.82rem;color:var(--text-dark-muted);border-top:1px solid rgba(20,28,43,.1);padding-top:18px;}
 
   /* COACHING */
   .coach-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-bottom:56px;}
@@ -360,14 +380,6 @@
     .footer-grid{grid-template-columns:1fr;}
   }
   @media (max-width: 720px){
-    .nav-links{
-      position:fixed;top:64px;left:0;right:0;background:var(--navy-900);
-      flex-direction:column;padding:24px;gap:18px;border-bottom:1px solid rgba(255,255,255,.08);
-      transform:translateY(-140%);transition:transform .25s ease;z-index:40;
-    }
-    .nav-links.open{transform:translateY(0);}
-    .nav-social{margin-left:0;}
-    .burger{display:flex;}
     section{padding:60px 0;}
     .help-grid{grid-template-columns:1fr;}
     .books-grid{grid-template-columns:repeat(2,1fr);}
@@ -386,10 +398,9 @@
       <li><a href="#historia">Mi historia</a></li>
       <li><a href="#ayuda">Cómo ayudo</a></li>
       <li><a href="#entrenamiento">Entrenamiento</a></li>
-      <li><a href="#phat">PHAT</a></li>
-      <li><a href="#hybrid">Híbrido & HYROX</a></li>
       <li><a href="#becas">Becas</a></li>
-      <li><a href="#coaching">Coaching 1:1</a></li>
+      <li><a href="#phat">PHAT</a></li>
+      <li><a href="#hybrid">Híbrido</a></li>
       <li><a href="#neuropeptides">NeuroPeptides</a></li>
       <li><a href="#libros">Libros</a></li>
       <li class="nav-social">
@@ -537,11 +548,50 @@
   </div>
 </section>
 
-<section id="phat">
+<section id="becas">
   <div class="wrap">
-    <span class="eyebrow" style="color:#e56a1f;">Programa de entrenamiento</span>
+    <span class="eyebrow" style="color:#e56a1f;">Becas para estudiantes de LATAM</span>
+    <h2 style="max-width:700px;margin-bottom:10px;">Salir de LATAM puede ser un plan, no un salto de fe.</h2>
+    <p style="color:var(--text-dark-muted);max-width:680px;margin-bottom:10px;">Directorio de plataformas reales donde buscar becas activas en Estados Unidos y Canadá, organizadas por nivel de estudio. Verifica siempre fechas y requisitos directamente en cada sitio.</p>
+
+    <div class="becas-cols">
+      <div class="becas-col">
+        <h3>🎓 Pregrado</h3>
+        <ul>
+          <li><a href="https://bold.org/scholarships/" target="_blank" rel="noopener">Bold.org</a><span>Becas para estudiantes internacionales en EE. UU.</span></li>
+          <li><a href="https://www.fastweb.com/" target="_blank" rel="noopener">Fastweb</a><span>Buscador masivo de becas para pregrado en EE. UU.</span></li>
+          <li><a href="https://www.educanada.ca/scholarships-bourses/index.aspx?lang=eng" target="_blank" rel="noopener">EduCanada – Scholarships</a><span>Becas oficiales del gobierno de Canadá</span></li>
+          <li><a href="https://yconic.com/scholarships" target="_blank" rel="noopener">Yconic</a><span>Becas y ayudas para Canadá</span></li>
+        </ul>
+      </div>
+      <div class="becas-col">
+        <h3>🎓 Máster</h3>
+        <ul>
+          <li><a href="https://www.profellow.com/" target="_blank" rel="noopener">ProFellow</a><span>Fellowships y becas de posgrado a nivel global</span></li>
+          <li><a href="https://eca.state.gov/fulbright" target="_blank" rel="noopener">Fulbright Program</a><span>Becas de EE. UU. para estudiantes internacionales</span></li>
+          <li><a href="https://www.iie.org/" target="_blank" rel="noopener">IIE – Institute of International Education</a><span>Financiamiento y programas para estudiar en EE. UU.</span></li>
+          <li><a href="https://www.scholarshipscanada.com/" target="_blank" rel="noopener">ScholarshipsCanada.com</a><span>Base de datos de becas de posgrado en Canadá</span></li>
+        </ul>
+      </div>
+      <div class="becas-col">
+        <h3>🎓 PhD</h3>
+        <ul>
+          <li><a href="https://www.vanier.gc.ca/" target="_blank" rel="noopener">Vanier Canada Graduate Scholarships</a><span>Beca doctoral insignia del gobierno de Canadá</span></li>
+          <li><a href="https://www.findaphd.com/" target="_blank" rel="noopener">FindAPhD.com</a><span>Buscador global de posiciones y becas doctorales</span></li>
+          <li><a href="https://www.nserc-crsng.gc.ca/" target="_blank" rel="noopener">NSERC – Canada Graduate Scholarships</a><span>Financiamiento doctoral en ciencias en Canadá</span></li>
+          <li><a href="https://eca.state.gov/fulbright" target="_blank" rel="noopener">Fulbright Foreign Student Program</a><span>También aplica para investigación doctoral en EE. UU.</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="becas-disclaimer">Estos son directorios y programas externos, no soy afiliado ni garantizo resultados de aplicación — son el punto de partida que a mí me hubiera gustado tener.</p>
+  </div>
+</section>
+
+<section class="section-dark" id="phat">
+  <div class="wrap">
+    <span class="eyebrow">Programa de entrenamiento</span>
     <h2 style="font-size:clamp(1.7rem,3vw,2.3rem);max-width:680px;margin-bottom:14px;">PHAT — Power Hypertrophy Adaptive Training</h2>
-    <p style="color:var(--text-dark-muted);max-width:680px;margin-bottom:30px;">Mi rutina base: combina días pesados de fuerza (torso y pierna) con días de hipertrofia mecánica (espalda-hombros, piernas, pecho-brazos). Progresión semanal automática de 6 semanas calculada a partir de tu propio 1RM — solo edita un número y la hoja te arma todos los pesos.</p>
+    <p style="color:var(--text-muted);max-width:680px;margin-bottom:30px;">Mi rutina base: combina días pesados de fuerza (torso y pierna) con días de hipertrofia mecánica (espalda-hombros, piernas, pecho-brazos). Progresión semanal automática de 6 semanas calculada a partir de tu propio 1RM — solo edita un número y la hoja te arma todos los pesos.</p>
 
     <div class="phat-days-grid">
       <div class="phat-day">
@@ -600,11 +650,11 @@
   </div>
 </section>
 
-<section id="hybrid">
+<section class="section-dark" id="hybrid">
   <div class="wrap">
-    <span class="eyebrow" style="color:#e56a1f;">Programa de entrenamiento</span>
+    <span class="eyebrow">Programa de entrenamiento</span>
     <h2 style="font-size:clamp(1.7rem,3vw,2.3rem);max-width:680px;margin-bottom:14px;">Físico Híbrido + HYROX</h2>
-    <p style="color:var(--text-dark-muted);max-width:680px;margin-bottom:30px;">Para cuando ya tienes el músculo y quieres mantenerlo mientras subes tu resistencia, potencia y salud general — sin volverte un corredor de HYROX de tiempo completo. 4 días de pesas + 2 días de cardio funcional estilo HYROX + 1 día de descanso total. La prioridad sigue siendo proteger la recuperación de piernas: nada de volumen de carrera completo.</p>
+    <p style="color:var(--text-muted);max-width:680px;margin-bottom:30px;">Para cuando ya tienes el músculo y quieres mantenerlo mientras subes tu resistencia, potencia y salud general — sin volverte un corredor de HYROX de tiempo completo. 4 días de pesas + 2 días de cardio funcional estilo HYROX + 1 día de descanso total. La prioridad sigue siendo proteger la recuperación de piernas: nada de volumen de carrera completo.</p>
 
     <div class="hybrid-days-grid">
       <div class="phat-day">
@@ -671,45 +721,6 @@
       <p id="hybrid-cta-text">Es el mismo recurso — no llenes otro formulario. Desbloquéalo una vez en "Plan gratis" y accedes al Excel de PHAT, al Híbrido + HYROX y a tu guía de nutrición juntos.</p>
       <a href="#plan-gratis" class="btn btn-warm btn-block" id="hybrid-cta-btn">Ir a desbloquear mi plan gratis →</a>
     </div>
-  </div>
-</section>
-
-<section class="section-dark" id="becas">
-  <div class="wrap">
-    <span class="eyebrow">Becas para estudiantes de LATAM</span>
-    <h2 style="max-width:700px;margin-bottom:10px;">Salir de LATAM puede ser un plan, no un salto de fe.</h2>
-    <p style="color:var(--text-muted);max-width:680px;margin-bottom:10px;">Directorio de plataformas reales donde buscar becas activas en Estados Unidos y Canadá, organizadas por nivel de estudio. Verifica siempre fechas y requisitos directamente en cada sitio.</p>
-
-    <div class="becas-cols">
-      <div class="becas-col">
-        <h3>🎓 Pregrado</h3>
-        <ul>
-          <li><a href="https://bold.org/scholarships/" target="_blank" rel="noopener">Bold.org</a><span>Becas para estudiantes internacionales en EE. UU.</span></li>
-          <li><a href="https://www.fastweb.com/" target="_blank" rel="noopener">Fastweb</a><span>Buscador masivo de becas para pregrado en EE. UU.</span></li>
-          <li><a href="https://www.educanada.ca/scholarships-bourses/index.aspx?lang=eng" target="_blank" rel="noopener">EduCanada – Scholarships</a><span>Becas oficiales del gobierno de Canadá</span></li>
-          <li><a href="https://yconic.com/scholarships" target="_blank" rel="noopener">Yconic</a><span>Becas y ayudas para Canadá</span></li>
-        </ul>
-      </div>
-      <div class="becas-col">
-        <h3>🎓 Máster</h3>
-        <ul>
-          <li><a href="https://www.profellow.com/" target="_blank" rel="noopener">ProFellow</a><span>Fellowships y becas de posgrado a nivel global</span></li>
-          <li><a href="https://eca.state.gov/fulbright" target="_blank" rel="noopener">Fulbright Program</a><span>Becas de EE. UU. para estudiantes internacionales</span></li>
-          <li><a href="https://www.iie.org/" target="_blank" rel="noopener">IIE – Institute of International Education</a><span>Financiamiento y programas para estudiar en EE. UU.</span></li>
-          <li><a href="https://www.scholarshipscanada.com/" target="_blank" rel="noopener">ScholarshipsCanada.com</a><span>Base de datos de becas de posgrado en Canadá</span></li>
-        </ul>
-      </div>
-      <div class="becas-col">
-        <h3>🎓 PhD</h3>
-        <ul>
-          <li><a href="https://www.vanier.gc.ca/" target="_blank" rel="noopener">Vanier Canada Graduate Scholarships</a><span>Beca doctoral insignia del gobierno de Canadá</span></li>
-          <li><a href="https://www.findaphd.com/" target="_blank" rel="noopener">FindAPhD.com</a><span>Buscador global de posiciones y becas doctorales</span></li>
-          <li><a href="https://www.nserc-crsng.gc.ca/" target="_blank" rel="noopener">NSERC – Canada Graduate Scholarships</a><span>Financiamiento doctoral en ciencias en Canadá</span></li>
-          <li><a href="https://eca.state.gov/fulbright" target="_blank" rel="noopener">Fulbright Foreign Student Program</a><span>También aplica para investigación doctoral en EE. UU.</span></li>
-        </ul>
-      </div>
-    </div>
-    <p class="becas-disclaimer">Estos son directorios y programas externos, no soy afiliado ni garantizo resultados de aplicación — son el punto de partida que a mí me hubiera gustado tener.</p>
   </div>
 </section>
 

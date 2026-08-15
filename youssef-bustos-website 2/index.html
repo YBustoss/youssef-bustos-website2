@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Youssef Bustos | Neurociencia, Fitness & Productividad</title>
+<meta name="description" content="Hecho con disciplina, cafeína y algo de neurociencia. Estudiante internacional de Neurociencia en la Universidad de Toronto. Entrenamiento, becas para LATAM, productividad y neurociencia aplicada.">
+<meta name="theme-color" content="#060b16">
+
+<!-- Favicon -->
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<!-- Open Graph (vista previa al compartir en Instagram/TikTok/WhatsApp) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Youssef Bustos | Neurociencia, Fitness & Productividad">
+<meta property="og:description" content="Hecho con disciplina, cafeína y algo de neurociencia. Entrenamiento, becas para LATAM, productividad y neurociencia aplicada.">
+<meta property="og:image" content="foto-principal.jpg">
+
+<!-- Twitter/X Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Youssef Bustos | Neurociencia, Fitness & Productividad">
+<meta name="twitter:description" content="Hecho con disciplina, cafeína y algo de neurociencia.">
+<meta name="twitter:image" content="foto-principal.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy-900:#060b16;
+    --navy-800:#0c1526;
+    --navy-700:#12203a;
+    --navy-600:#1a2c4d;
+    --blue-accent:#4db8ff;
+    --cyan-accent:#2bd9c9;
+    --cream:#f6f1e6;
+    --cream-card:#fffdf7;
+    --warm:#ff8a3d;
+    --warm-dark:#e56a1f;
+    --text-light:#eef3fb;
+    --text-muted:#9fb0c9;
+    --text-dark:#141c2b;
+    --text-dark-muted:#5b6577;
+    --radius:18px;
+    --maxw:1160px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter',sans-serif;
+    background:var(--cream);
+    color:var(--text-dark);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{font-family:'Sora',sans-serif;font-weight:700;line-height:1.15;}
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+  ul{list-style:none;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+  .eyebrow{
+    display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--cyan-accent);margin-bottom:14px;
+  }
+  section{padding:88px 0;}
+  .section-dark{background:var(--navy-900);color:var(--text-light);}
+  .section-dark .eyebrow{color:var(--cyan-accent);}
+  .center{text-align:center;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:999px;
+    font-weight:700;font-size:.95rem;border:2px solid transparent;cursor:pointer;
+    transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-warm{background:var(--warm);color:#181008;box-shadow:0 8px 22px -6px rgba(255,138,61,.55);}
+  .btn-warm:hover{background:var(--warm-dark);}
+  .btn-outline{border-color:rgba(255,255,255,.35);color:var(--text-light);}
+  .btn-outline:hover{border-color:var(--cyan-accent);color:var(--cyan-accent);}
+  .btn-outline-dark{border-color:rgba(20,28,43,.25);color:var(--text-dark);}
+  .btn-outline-dark:hover{border-color:var(--navy-700);}
+  .btn-block{width:100%;justify-content:center;}
+
+  /* NAV */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(6,11,22,.85);backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  nav.wrap{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;}
+  .logo{font-family:'Sora',sans-serif;font-weight:800;font-size:1.2rem;color:var(--text-light);letter-spacing:.01em;}
+  .logo span{color:var(--cyan-accent);}
+  .nav-links{display:flex;gap:28px;align-items:center;}
+  .nav-links a{color:var(--text-muted);font-size:.92rem;font-weight:600;transition:color .15s;}
+  .nav-links a:hover{color:var(--cyan-accent);}
+  .nav-cta{background:var(--warm);color:#181008;padding:10px 20px;border-radius:999px;font-weight:700;font-size:.88rem;}
+  .nav-social{display:flex;gap:14px;margin-left:6px;}
+  .nav-social a{color:var(--text-muted);}
+  .nav-social a:hover{color:var(--cyan-accent);}
+  .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;}
+  .burger span{width:24px;height:2px;background:var(--text-light);display:block;border-radius:2px;}
+
+  /* HERO */
+  .hero{
+    background:
+      radial-gradient(ellipse at 15% 20%, rgba(77,184,255,.18), transparent 55%),
+      radial-gradient(ellipse at 85% 80%, rgba(43,217,201,.14), transparent 55%),
+      var(--navy-900);
+    padding:100px 0 80px;position:relative;overflow:hidden;
+  }
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;}
+  .hero h1{font-size:clamp(2.1rem,4.2vw,3.4rem);color:var(--text-light);margin-bottom:20px;}
+  .hero h1 em{font-style:normal;color:var(--cyan-accent);}
+  .hero p.lead{font-size:1.13rem;color:var(--text-muted);max-width:520px;margin-bottom:32px;}
+  .hero .slogan{
+    font-family:'Sora',sans-serif;font-weight:700;font-style:italic;font-size:1.02rem;
+    color:var(--cyan-accent);border-left:3px solid var(--warm);padding-left:14px;
+    margin-bottom:32px;max-width:480px;
+  }
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px;}
+  .hero-badges{display:flex;flex-wrap:wrap;gap:10px;}
+  .badge{
+    background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
+    padding:8px 14px;border-radius:999px;font-size:.82rem;color:var(--text-muted);font-weight:600;
+  }
+  .hero-photo{
+    aspect-ratio:4/5;border-radius:24px;
+    background:linear-gradient(160deg,var(--navy-700),var(--navy-600));
+    border:1px solid rgba(255,255,255,.1);
+    display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;
+    color:var(--text-muted);font-size:.9rem;position:relative;overflow:hidden;
+  }
+  .hero-photo img{
+    position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:24px;z-index:0;
+  }
+  .hero-photo::after{
+    content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+    background:radial-gradient(circle at 50% 20%, rgba(77,184,255,.25), transparent 60%);
+  }
+  .hero-photo .ph-label{position:relative;z-index:2;}
+
+  /* HELP GRID */
+  .help-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:46px;}
+  .help-card{
+    background:var(--cream-card);border:1px solid rgba(20,28,43,.08);border-radius:var(--radius);
+    padding:30px 26px;transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .help-card:hover{transform:translateY(-4px);box-shadow:0 16px 30px -14px rgba(20,28,43,.2);}
+  .help-card .icon{font-size:1.8rem;margin-bottom:16px;display:block;}
+  .help-card h3{font-size:1.12rem;margin-bottom:10px;color:var(--text-dark);}
+  .help-card p{color:var(--text-dark-muted);font-size:.94rem;margin-bottom:16px;}
+  .help-card a{color:var(--warm-dark);font-weight:700;font-size:.88rem;}
+
+  /* HISTORIA */
+  .historia-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:center;}
+  .historia-photo{
+    aspect-ratio:3/4;border-radius:22px;background:linear-gradient(160deg,var(--navy-700),var(--navy-800));
+    border:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;
+    color:var(--text-muted);font-size:.9rem;text-align:center;padding:20px;position:relative;overflow:hidden;
+  }
+  .historia-photo img{
+    position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:22px;
+  }
+  .historia-photo span{position:relative;z-index:1;}
+  .historia h2{font-size:clamp(1.7rem,3vw,2.4rem);color:var(--text-light);margin-bottom:20px;}
+  .historia p{color:var(--text-muted);margin-bottom:16px;font-size:1.02rem;}
+  .historia p strong{color:var(--text-light);}
+  .fact-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px;}
+  .fact{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:18px;}
+  .fact .num{font-family:'Sora',sans-serif;font-weight:800;font-size:1.5rem;color:var(--cyan-accent);}
+  .fact .lbl{font-size:.8rem;color:var(--text-muted);margin-top:4px;}
+
+  /* TRAINING */
+  .train-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;margin-bottom:56px;}
+  .transform-box{
+    border-radius:var(--radius);background:var(--cream-card);border:1px solid rgba(20,28,43,.08);
+    padding:22px;display:grid;grid-template-columns:1fr 1fr;gap:14px;
+  }
+  .transform-box .ph{
+    aspect-ratio:3/4;border-radius:12px;background:linear-gradient(160deg,#e9e2d1,#d9cfb8);
+    display:flex;align-items:center;justify-content:center;color:var(--text-dark-muted);font-size:.82rem;
+    text-align:center;padding:10px;position:relative;overflow:hidden;
+  }
+  .transform-box .ph img{
+    position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:12px;
+  }
+  .transform-box .ph span{position:relative;z-index:1;}
+  .stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:36px 0 46px;}
+  .stat-card{
+    background:var(--navy-900);color:var(--text-light);border-radius:16px;padding:22px 16px;text-align:center;
+  }
+  .stat-card .val{font-family:'Sora',sans-serif;font-weight:800;font-size:1.4rem;color:var(--cyan-accent);}
+  .stat-card .lbl{font-size:.78rem;color:var(--text-muted);margin-top:6px;}
+  .pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;}
+  .pillar{background:var(--cream-card);border:1px solid rgba(20,28,43,.08);border-radius:16px;padding:22px;}
+  .pillar h4{font-size:1rem;margin-bottom:8px;}
+  .pillar p{font-size:.88rem;color:var(--text-dark-muted);}
+  .note-edit{
+    display:inline-block;background:rgba(255,138,61,.14);color:var(--warm-dark);border:1px dashed var(--warm);
+    padding:6px 12px;border-radius:8px;font-size:.78rem;font-weight:700;margin-bottom:18px;
+  }
+
+  /* PHAT */
+  .phat-days-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin:36px 0 46px;}
+  .hybrid-days-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px;margin:36px 0 46px;}
+  .phat-day{background:var(--cream-card);border:1px solid rgba(20,28,43,.08);border-radius:16px;padding:20px 16px;}
+  .phat-day h4{font-size:.92rem;margin-bottom:10px;color:var(--text-dark);}
+  .phat-day ul{display:flex;flex-direction:column;gap:6px;}
+  .phat-day li{font-size:.76rem;color:var(--text-dark-muted);}
+  .phat-gate, .phat-unlocked{
+    background:var(--navy-900);color:var(--text-light);border-radius:var(--radius);
+    padding:44px;text-align:center;max-width:620px;margin:0 auto;
+  }
+  .phat-gate .lock-icon{font-size:2.2rem;margin-bottom:14px;}
+  .phat-gate h3, .phat-unlocked h3{font-size:1.3rem;margin-bottom:10px;color:var(--text-light);}
+  .phat-unlocked h3{color:var(--cyan-accent);}
+  .phat-gate p, .phat-unlocked p{color:var(--text-muted);margin-bottom:24px;}
+  .phat-gate form{max-width:420px;margin:0 auto;text-align:left;}
+  .phat-gate form label{color:var(--text-light);}
+
+  /* BECAS */
+  .becas-tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:36px;}
+  .becas-tab-label{
+    background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);color:var(--text-muted);
+    padding:9px 18px;border-radius:999px;font-size:.85rem;font-weight:700;
+  }
+  .becas-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .becas-col h3{color:var(--cyan-accent);font-size:1.05rem;margin-bottom:16px;}
+  .becas-col ul{display:flex;flex-direction:column;gap:12px;}
+  .becas-col li{
+    background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:14px 16px;
+    transition:border-color .15s;
+  }
+  .becas-col li:hover{border-color:var(--cyan-accent);}
+  .becas-col li a{font-weight:700;color:var(--text-light);font-size:.94rem;display:block;margin-bottom:4px;}
+  .becas-col li span{font-size:.8rem;color:var(--text-muted);}
+  .becas-disclaimer{margin-top:30px;font-size:.82rem;color:var(--text-muted);border-top:1px solid rgba(255,255,255,.1);padding-top:18px;}
+
+  /* COACHING */
+  .coach-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-bottom:56px;}
+  .coach-card{
+    background:var(--cream-card);border:1px solid rgba(20,28,43,.08);border-radius:var(--radius);
+    padding:30px 26px;display:flex;flex-direction:column;
+  }
+  .coach-card.featured{background:var(--navy-900);color:var(--text-light);border-color:var(--navy-900);position:relative;}
+  .coach-card.featured .ribbon{
+    position:absolute;top:-12px;right:22px;background:var(--warm);color:#181008;font-size:.72rem;font-weight:800;
+    padding:5px 12px;border-radius:999px;letter-spacing:.03em;text-transform:uppercase;
+  }
+  .coach-card h3{font-size:1.15rem;margin-bottom:6px;}
+  .coach-card .price{font-family:'Sora',sans-serif;font-weight:800;font-size:1.5rem;margin:10px 0 16px;color:var(--warm-dark);}
+  .coach-card.featured .price{color:var(--cyan-accent);}
+  .coach-card ul{margin-bottom:24px;flex:1;}
+  .coach-card li{font-size:.9rem;padding:6px 0;padding-left:22px;position:relative;color:var(--text-dark-muted);}
+  .coach-card.featured li{color:var(--text-muted);}
+  .coach-card li::before{content:"✓";position:absolute;left:0;color:var(--warm-dark);font-weight:800;}
+  .coach-card.featured li::before{color:var(--cyan-accent);}
+
+  .contact-panel{
+    background:var(--cream-card);border:1px solid rgba(20,28,43,.08);border-radius:var(--radius);
+    padding:40px;display:grid;grid-template-columns:1fr 1fr;gap:40px;
+  }
+  .contact-panel h3{font-size:1.3rem;margin-bottom:10px;}
+  .contact-panel p{color:var(--text-dark-muted);font-size:.94rem;margin-bottom:18px;}
+  .contact-alt{display:flex;flex-direction:column;gap:12px;margin-top:10px;}
+  .contact-alt a{font-weight:700;color:var(--warm-dark);font-size:.92rem;}
+  form .field{margin-bottom:16px;}
+  form label{display:block;font-size:.82rem;font-weight:700;margin-bottom:6px;color:var(--text-dark);}
+  form input, form select, form textarea{
+    width:100%;padding:12px 14px;border-radius:10px;border:1px solid rgba(20,28,43,.18);
+    font-family:'Inter',sans-serif;font-size:.92rem;background:#fff;color:var(--text-dark);
+  }
+  form textarea{resize:vertical;min-height:90px;}
+  .phone-row{display:flex;gap:8px;}
+  .phone-row select{flex:0 0 132px;}
+  .phone-row input{flex:1;min-width:0;}
+  .form-status{margin-top:12px;font-size:.85rem;font-weight:600;min-height:1.2em;}
+  .form-status.ok{color:#1c8a5f;}
+  .form-status.err{color:#c94a2c;}
+  .section-dark .form-status.ok{color:var(--cyan-accent);}
+  .section-dark .form-status.err{color:var(--warm);}
+
+  /* PEPTIDES */
+  .pep-panel{
+    background:linear-gradient(135deg,var(--navy-700),var(--navy-900));border:1px solid rgba(255,255,255,.1);
+    border-radius:24px;padding:52px;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;
+  }
+  .pep-panel .ribbon2{
+    display:inline-block;background:rgba(43,217,201,.15);color:var(--cyan-accent);border:1px solid rgba(43,217,201,.4);
+    padding:6px 14px;border-radius:999px;font-size:.75rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;
+    margin-bottom:16px;
+  }
+  .pep-panel h3{font-size:1.9rem;color:var(--text-light);margin-bottom:14px;}
+  .pep-panel p{color:var(--text-muted);margin-bottom:22px;}
+  .pep-form{display:flex;gap:10px;flex-wrap:wrap;}
+  .pep-form input{flex:1;min-width:200px;padding:13px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06);color:var(--text-light);}
+  .pep-form input::placeholder{color:var(--text-muted);}
+  .pep-visual{
+    aspect-ratio:1/1;border-radius:18px;background:radial-gradient(circle at 40% 30%, rgba(43,217,201,.25), rgba(255,255,255,.03));
+    border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;
+    color:var(--text-muted);font-size:.85rem;text-align:center;padding:20px;
+  }
+
+  /* LIBROS */
+  .books-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:18px;margin-top:20px;}
+  .book-card{background:var(--cream-card);border:1px solid rgba(20,28,43,.08);border-radius:14px;overflow:hidden;}
+  .book-cover{
+    aspect-ratio:2/3;background:linear-gradient(160deg,var(--navy-700),var(--navy-600));
+    display:flex;align-items:center;justify-content:center;color:var(--text-light);font-size:.78rem;
+    text-align:center;padding:10px;font-weight:700;
+  }
+  .book-card .book-meta{padding:12px;}
+  .book-card .book-meta .t{font-size:.85rem;font-weight:700;}
+  .book-card .book-meta .a{font-size:.76rem;color:var(--text-dark-muted);}
+
+  /* QUOTE BANNER */
+  .quote-banner{background:var(--navy-900);padding:90px 0;}
+  .quote-list{display:flex;flex-direction:column;gap:34px;}
+  .quote-list p{
+    font-family:'Sora',sans-serif;font-weight:700;font-size:clamp(1.3rem,2.6vw,2rem);
+    color:var(--text-light);text-align:center;
+  }
+  .quote-list p span{color:var(--cyan-accent);}
+  .quote-list p::before{content:"“";color:var(--warm);}
+  .quote-list p::after{content:"”";color:var(--warm);}
+
+  /* FOOTER */
+  footer{background:var(--navy-900);color:var(--text-muted);padding:60px 0 30px;border-top:1px solid rgba(255,255,255,.08);}
+  .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:40px;}
+  .footer-grid h4{color:var(--text-light);font-size:.95rem;margin-bottom:14px;}
+  .footer-grid ul{display:flex;flex-direction:column;gap:10px;}
+  .footer-grid a{font-size:.88rem;}
+  .footer-grid a:hover{color:var(--cyan-accent);}
+  .footer-social{display:flex;gap:16px;margin-top:14px;}
+  .footer-social a{
+    width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.15);
+    display:flex;align-items:center;justify-content:center;font-size:.85rem;
+  }
+  .footer-social a:hover{border-color:var(--cyan-accent);color:var(--cyan-accent);}
+  .footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:24px;font-size:.8rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+
+  /* RESPONSIVE */
+  @media (max-width: 980px){
+    .hero-grid, .historia-grid, .train-grid{grid-template-columns:1fr;}
+    .hero-photo{order:-1;max-width:340px;margin:0 auto;}
+    .historia-photo{max-width:320px;margin:0 auto;}
+    .help-grid{grid-template-columns:repeat(2,1fr);}
+    .becas-cols{grid-template-columns:1fr;}
+    .coach-grid{grid-template-columns:1fr;}
+    .contact-panel{grid-template-columns:1fr;padding:28px;}
+    .pep-panel{grid-template-columns:1fr;padding:32px;}
+    .pep-visual{max-width:260px;margin:0 auto;}
+    .books-grid{grid-template-columns:repeat(3,1fr);}
+    .stat-grid{grid-template-columns:repeat(2,1fr);}
+    .pillars{grid-template-columns:repeat(2,1fr);}
+    .phat-days-grid{grid-template-columns:repeat(2,1fr);}
+    .phat-gate, .phat-unlocked{padding:30px;}
+    .fact-strip{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr;}
+  }
+  @media (max-width: 720px){
+    .nav-links{
+      position:fixed;top:64px;left:0;right:0;background:var(--navy-900);
+      flex-direction:column;padding:24px;gap:18px;border-bottom:1px solid rgba(255,255,255,.08);
+      transform:translateY(-140%);transition:transform .25s ease;z-index:40;
+    }
+    .nav-links.open{transform:translateY(0);}
+    .nav-social{margin-left:0;}
+    .burger{display:flex;}
+    section{padding:60px 0;}
+    .help-grid{grid-template-columns:1fr;}
+    .books-grid{grid-template-columns:repeat(2,1fr);}
+    .phat-days-grid{grid-template-columns:1fr;}
+    .hero-actions{flex-direction:column;}
+    .btn{width:100%;justify-content:center;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a href="#inicio" class="logo">Youssef<span>.</span>Bustos</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#historia">Mi historia</a></li>
+      <li><a href="#ayuda">Cómo ayudo</a></li>
+      <li><a href="#entrenamiento">Entrenamiento</a></li>
+      <li><a href="#phat">PHAT</a></li>
+      <li><a href="#hybrid">Híbrido & HYROX</a></li>
+      <li><a href="#becas">Becas</a></li>
+      <li><a href="#coaching">Coaching 1:1</a></li>
+      <li><a href="#neuropeptides">NeuroPeptides</a></li>
+      <li><a href="#libros">Libros</a></li>
+      <li class="nav-social">
+        <a href="https://www.instagram.com/youssefbustoss_/" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+        <a href="https://www.tiktok.com/@youssef.ybs" target="_blank" rel="noopener" aria-label="TikTok">TT</a>
+        <a href="https://www.linkedin.com/search/results/people/?keywords=Youssef%20Bustos%20Saad" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+      </li>
+      <li><a href="#contacto" class="nav-cta">Coaching 1:1</a></li>
+    </ul>
+    <button class="burger" id="burgerBtn" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<section class="hero" id="inicio">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Neurociencia · Fitness · Productividad</span>
+      <h1>De Colombia a Toronto: construyendo <em>cuerpo, mente y disciplina</em>.</h1>
+      <p class="lead">Soy Youssef, estudiante colombiano del Specialist Program en Neurociencia de la Universidad de Toronto. Cambié de país persiguiendo una beca y un sueño — y en el camino aprendí que la disciplina, el entrenamiento y la ciencia del cerebro son la mejor combinación para explotar tu potencial. Ahora comparto todo lo que aprendí.</p>
+      <p class="slogan">Hecho con disciplina, cafeína y algo de neurociencia.</p>
+      <div class="hero-actions">
+        <a href="#contacto" class="btn btn-warm">Quiero coaching 1:1 →</a>
+        <a href="https://www.instagram.com/youssefbustoss_/" target="_blank" rel="noopener" class="btn btn-outline">Sígueme en Instagram</a>
+      </div>
+      <div class="hero-badges">
+        <span class="badge">🎓 U of T — Neurociencia</span>
+        <span class="badge">🏆 International Scholar's Award</span>
+        <span class="badge">🌎 Colombia → Canadá</span>
+        <span class="badge">💪 +100,000 en comunidad wellness</span>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="foto-principal.jpg" alt="Youssef Bustos" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+      <span class="ph-label" style="display:none;">[EDITAR]<br>Foto principal de Youssef<br><small>Guarda tu foto como "foto-principal.jpg" en esta misma carpeta (vertical, 4:5)</small></span>
+    </div>
+  </div>
+</section>
+
+<section id="ayuda">
+  <div class="wrap">
+    <span class="eyebrow" style="color:#e56a1f;">¿En qué te puedo ayudar?</span>
+    <h2 style="font-size:clamp(1.7rem,3vw,2.3rem);max-width:640px;">Ciencia del cerebro y del cuerpo, aplicada a tu vida real.</h2>
+    <div class="help-grid">
+      <div class="help-card">
+        <span class="icon">🏋️</span>
+        <h3>Entrenamiento & Físico</h3>
+        <p>Rutinas de hipertrofia y fuerza basadas en evidencia, sin humo ni mitos de gimnasio.</p>
+        <a href="#entrenamiento">Ver el programa →</a>
+      </div>
+      <div class="help-card">
+        <span class="icon">🧠</span>
+        <h3>Neurociencia aplicada</h3>
+        <p>Lo que la ciencia del cerebro dice sobre foco, motivación, sueño y aprendizaje — traducido a acciones simples.</p>
+        <a href="#historia">Conoce mi background →</a>
+      </div>
+      <div class="help-card">
+        <span class="icon">📚</span>
+        <h3>Estudios & Productividad</h3>
+        <p>Sistemas para rendir en la universidad sin quemarte, probados como estudiante internacional en Dean's List.</p>
+        <a href="#coaching">Ver coaching →</a>
+      </div>
+      <div class="help-card">
+        <span class="icon">🎓</span>
+        <h3>Becas LATAM → USA/Canadá</h3>
+        <p>Directorio de becas activas para pregrado, máster y PhD, para que salir de LATAM sea un plan y no un salto al vacío.</p>
+        <a href="#becas">Buscar becas →</a>
+      </div>
+      <div class="help-card">
+        <span class="icon">🧪</span>
+        <h3>NeuroPeptides</h3>
+        <p>Mi próximo proyecto sobre péptidos, rendimiento y ciencia — únete a la lista de espera.</p>
+        <a href="#neuropeptides">Ver más →</a>
+      </div>
+      <div class="help-card">
+        <span class="icon">😄</span>
+        <h3>Contenido con humor</h3>
+        <p>Porque la disciplina y la ciencia también se pueden disfrutar. Sígueme en redes para el día a día.</p>
+        <a href="https://www.tiktok.com/@youssef.ybs" target="_blank" rel="noopener">Ver TikTok →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-dark historia" id="historia">
+  <div class="wrap historia-grid">
+    <div class="historia-photo">
+      <img src="foto-historia.jpg" alt="Historia de Youssef Bustos" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+      <span style="display:none;">[EDITAR]<br>Foto de tu historia<br><small>Guarda tu foto como "foto-historia.jpg" en esta misma carpeta (ej. graduación, laboratorio, viaje Colombia–Canadá)</small></span>
+    </div>
+    <div>
+      <span class="eyebrow">Mi historia</span>
+      <h2>Salir de LATAM no fue un plan de vacaciones. Fue apostarlo todo por un sueño.</h2>
+      <p>Nací y crecí en <strong>Colombia</strong>. Durante el colegio fui nominado a la <strong>Lester B. Pearson Scholarship</strong> y aprendí a organizar eventos, liderar equipos y sostener negocios estudiantiles — antes incluso de saber que terminaría dejando mi país por una beca, a miles de kilómetros de casa.</p>
+      <p>Hoy estudio el <strong>Specialist Program en Neurociencia en la Universidad de Toronto</strong>, soy receptor del <strong>International Scholar's Award</strong> y estoy en el <strong>Dean's List</strong>. He hecho investigación en cuatro laboratorios de neurociencia — interfaces cerebro-computadora, EEG y control sensoriomotor, neuroimagen fMRI de la corteza visual, y aprendizaje de lenguaje — además de ser voluntario en el servicio de urgencias del Toronto General Hospital.</p>
+      <p>Pero antes de todo eso, en 2021, empecé algo por mi cuenta: un proyecto de bienestar mental y físico para estudiantes jóvenes, con meditación, introspección, entrenamiento y nutrición. Esa cuenta creció a <strong>más de 100,000 likes</strong> — y ahí nació la idea de construir una marca personal en serio.</p>
+      <p>No tienes que ser el más talentoso ni tener todo resuelto para empezar. Yo empecé sin experiencia, en otro idioma, en otro país, sin red de contactos. Si estás pensando en salir de LATAM a estudiar, entrenar en serio o simplemente tomarte tu potencial con seriedad — esta página es para ti.</p>
+
+      <div class="fact-strip">
+        <div class="fact"><div class="num">4</div><div class="lbl">Labs de neurociencia en U of T</div></div>
+        <div class="fact"><div class="num">100K+</div><div class="lbl">Comunidad wellness desde 2021</div></div>
+        <div class="fact"><div class="num">1</div><div class="lbl">International Scholar's Award, U of T</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="entrenamiento">
+  <div class="wrap">
+    <span class="eyebrow" style="color:#e56a1f;">Entrenamiento & cambio físico</span>
+    <h2 style="font-size:clamp(1.7rem,3vw,2.3rem);max-width:680px;margin-bottom:14px;">Del salón de clases al gimnasio: mi transformación, con evidencia.</h2>
+    <span class="note-edit">[EDITAR] Reemplaza fotos, cifras y fechas con tu progreso real</span>
+    <div class="train-grid">
+      <div class="transform-box">
+        <div class="ph">
+          <img src="foto-antes.jpg" alt="Antes" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+          <span style="display:none;">Antes<br><small>Guarda tu foto como "foto-antes.jpg"</small></span>
+        </div>
+        <div class="ph">
+          <img src="foto-despues.jpg" alt="Ahora" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+          <span style="display:none;">Ahora<br><small>Guarda tu foto como "foto-despues.jpg"</small></span>
+        </div>
+      </div>
+      <div>
+        <p style="color:var(--text-dark-muted);margin-bottom:14px;">Combino entrenamiento de fuerza e hipertrofia con lo que estudio en neurociencia: sueño, dopamina, adherencia a hábitos y manejo del estrés. Resultado: un físico que se sostiene, no una dieta de un mes.</p>
+        <p style="color:var(--text-dark-muted);">Todo el proceso — rutina, nutrición y mentalidad — está documentado en mis redes y disponible en el programa de coaching 1:1.</p>
+      </div>
+    </div>
+
+    <div class="stat-grid">
+      <div class="stat-card"><div class="val">15</div><div class="lbl">Kg ganados en masa magra</div></div>
+      <div class="stat-card"><div class="val">6</div><div class="lbl">% grasa corporal reducido</div></div>
+      <div class="stat-card"><div class="val">24</div><div class="lbl">Meses de progreso</div></div>
+      <div class="stat-card"><div class="val">Entrenamiento Híbrido</div><div class="lbl">Resultados funcionales</div></div>
+    </div>
+
+    <div class="pillars">
+      <div class="pillar"><h4>💪 Fuerza & Hipertrofia</h4><p>Rutinas progresivas basadas en volumen e intensidad, no en modas de TikTok.</p><a href="#phat" style="display:inline-block;margin-top:8px;color:var(--warm-dark);font-weight:700;font-size:.85rem;">Ver el programa PHAT →</a></div>
+      <div class="pillar"><h4>🏃 Físico Híbrido & HYROX</h4><p>4 días de pesas + 2 de cardio funcional para ganar músculo magro sin perder resistencia.</p><a href="#hybrid" style="display:inline-block;margin-top:8px;color:var(--warm-dark);font-weight:700;font-size:.85rem;">Ver el programa Híbrido →</a></div>
+      <div class="pillar"><h4>🥗 Nutrición aplicada</h4><p>Estrategias simples de superávit/déficit sin obsesión ni restricción extrema.</p></div>
+      <div class="pillar"><h4>😴 Recuperación</h4><p>Sueño, manejo del estrés y descanso activo — la parte que casi nadie hace bien.</p></div>
+      <div class="pillar"><h4>🧠 Mentalidad</h4><p>Disciplina y hábitos vistos desde la neurociencia, no solo motivación de frase bonita.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="phat">
+  <div class="wrap">
+    <span class="eyebrow" style="color:#e56a1f;">Programa de entrenamiento</span>
+    <h2 style="font-size:clamp(1.7rem,3vw,2.3rem);max-width:680px;margin-bottom:14px;">PHAT — Power Hypertrophy Adaptive Training</h2>
+    <p style="color:var(--text-dark-muted);max-width:680px;margin-bottom:30px;">Mi rutina base: combina días pesados de fuerza (torso y pierna) con días de hipertrofia mecánica (espalda-hombros, piernas, pecho-brazos). Progresión semanal automática de 6 semanas calculada a partir de tu propio 1RM — solo edita un número y la hoja te arma todos los pesos.</p>
+
+    <div class="phat-days-grid">
+      <div class="phat-day">
+        <h4>Día 1 — Torso Pesado</h4>
+        <ul>
+          <li>A. Press Banca *Progresión*</li>
+          <li>B. Dominadas *Progresión*</li>
+          <li>C. Press Militar *Progresión*</li>
+          <li>+ 5 ejercicios más</li>
+        </ul>
+      </div>
+      <div class="phat-day">
+        <h4>Día 2 — Pierna Pesado</h4>
+        <ul>
+          <li>A. Sentadilla *Progresión*</li>
+          <li>B. Peso Muerto *Progresión*</li>
+          <li>C. Sentadilla Hack 2x6-10</li>
+          <li>+ 4 ejercicios más</li>
+        </ul>
+      </div>
+      <div class="phat-day">
+        <h4>Día 3 — Espalda-Hombros Hipertrofia</h4>
+        <ul>
+          <li>A. Torso explosivo *Progresión*</li>
+          <li>B. Rack chins 3x8-12</li>
+          <li>C. Remo en polea 3x8-12</li>
+          <li>+ 5 ejercicios más</li>
+        </ul>
+      </div>
+      <div class="phat-day">
+        <h4>Día 4 — Piernas Hipertrofia</h4>
+        <ul>
+          <li>A. Sentadilla explosiva *Progresión*</li>
+          <li>B. Sentadilla Hack 3x8-12</li>
+          <li>C. Prensa 2x12-15</li>
+          <li>+ 6 ejercicios más</li>
+        </ul>
+      </div>
+      <div class="phat-day">
+        <h4>Día 5 — Pecho-Brazos Hipertrofia</h4>
+        <ul>
+          <li>A. Press Banca explosivo *Progresión*</li>
+          <li>B. Press Banca inclinado 3x8-12</li>
+          <li>C. Press Pecho en máquina 3x12-15</li>
+          <li>+ 7 ejercicios más</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="phat-gate" id="phat-cta">
+      <div class="lock-icon" id="phat-cta-icon">🔒</div>
+      <h3 id="phat-cta-title">El PHAT es tu rutina dentro del plan gratis de entrenamiento y nutrición</h3>
+      <p id="phat-cta-text">Es el mismo recurso — no llenes otro formulario. Desbloquéalo una vez en "Plan gratis" y accedes al Excel de PHAT y a tu guía de nutrición juntos.</p>
+      <a href="#plan-gratis" class="btn btn-warm btn-block" id="phat-cta-btn">Ir a desbloquear mi plan gratis →</a>
+    </div>
+  </div>
+</section>
+
+<section id="hybrid">
+  <div class="wrap">
+    <span class="eyebrow" style="color:#e56a1f;">Programa de entrenamiento</span>
+    <h2 style="font-size:clamp(1.7rem,3vw,2.3rem);max-width:680px;margin-bottom:14px;">Físico Híbrido + HYROX</h2>
+    <p style="color:var(--text-dark-muted);max-width:680px;margin-bottom:30px;">Para cuando ya tienes el músculo y quieres mantenerlo mientras subes tu resistencia, potencia y salud general — sin volverte un corredor de HYROX de tiempo completo. 4 días de pesas + 2 días de cardio funcional estilo HYROX + 1 día de descanso total. La prioridad sigue siendo proteger la recuperación de piernas: nada de volumen de carrera completo.</p>
+
+    <div class="hybrid-days-grid">
+      <div class="phat-day">
+        <h4>Día 1 — Upper A</h4>
+        <ul>
+          <li>Empuje y tracción de torso</li>
+          <li>Fuerza + volumen moderado</li>
+          <li>RIR 1-3 en la mayoría de series</li>
+        </ul>
+      </div>
+      <div class="phat-day">
+        <h4>Día 2 — Lower A</h4>
+        <ul>
+          <li>Piernas pesado (fuerza)</li>
+          <li>Doble progresión de carga</li>
+          <li>Protege la recuperación para HYROX A</li>
+        </ul>
+      </div>
+      <div class="phat-day">
+        <h4>Día 3 — HYROX A (Miércoles)</h4>
+        <ul>
+          <li>~70% cardio / 30% estaciones</li>
+          <li>RPE 7-8, no es una carrera</li>
+          <li>Intervalos + 1-2 estaciones HYROX</li>
+        </ul>
+      </div>
+      <div class="phat-day">
+        <h4>Día 4 — Upper B</h4>
+        <ul>
+          <li>Espalda, hombros y brazos</li>
+          <li>Volumen de hipertrofia</li>
+          <li>RIR 1-3</li>
+        </ul>
+      </div>
+      <div class="phat-day">
+        <h4>Día 5 — Lower B</h4>
+        <ul>
+          <li>Piernas y glúteos</li>
+          <li>Complementa el Día 2</li>
+          <li>Carga moderada-alta</li>
+        </ul>
+      </div>
+      <div class="phat-day">
+        <h4>Día 6 — HYROX B (Sábado)</h4>
+        <ul>
+          <li>~50% cardio / 50% estaciones</li>
+          <li>RPE 7-9, tu sesión más dura</li>
+          <li>Simulación parcial de carrera</li>
+        </ul>
+      </div>
+      <div class="phat-day">
+        <h4>Día 7 — Descanso</h4>
+        <ul>
+          <li>Descanso total</li>
+          <li>Prioriza sueño y recuperación</li>
+          <li>Caminatas/pasos diarios sí cuentan</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="phat-gate" id="hybrid-cta">
+      <div class="lock-icon" id="hybrid-cta-icon">🔒</div>
+      <h3 id="hybrid-cta-title">El Híbrido + HYROX es parte de tu plan gratis de entrenamiento y nutrición</h3>
+      <p id="hybrid-cta-text">Es el mismo recurso — no llenes otro formulario. Desbloquéalo una vez en "Plan gratis" y accedes al Excel de PHAT, al Híbrido + HYROX y a tu guía de nutrición juntos.</p>
+      <a href="#plan-gratis" class="btn btn-warm btn-block" id="hybrid-cta-btn">Ir a desbloquear mi plan gratis →</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-dark" id="becas">
+  <div class="wrap">
+    <span class="eyebrow">Becas para estudiantes de LATAM</span>
+    <h2 style="max-width:700px;margin-bottom:10px;">Salir de LATAM puede ser un plan, no un salto de fe.</h2>
+    <p style="color:var(--text-muted);max-width:680px;margin-bottom:10px;">Directorio de plataformas reales donde buscar becas activas en Estados Unidos y Canadá, organizadas por nivel de estudio. Verifica siempre fechas y requisitos directamente en cada sitio.</p>
+
+    <div class="becas-cols">
+      <div class="becas-col">
+        <h3>🎓 Pregrado</h3>
+        <ul>
+          <li><a href="https://bold.org/scholarships/" target="_blank" rel="noopener">Bold.org</a><span>Becas para estudiantes internacionales en EE. UU.</span></li>
+          <li><a href="https://www.fastweb.com/" target="_blank" rel="noopener">Fastweb</a><span>Buscador masivo de becas para pregrado en EE. UU.</span></li>
+          <li><a href="https://www.educanada.ca/scholarships-bourses/index.aspx?lang=eng" target="_blank" rel="noopener">EduCanada – Scholarships</a><span>Becas oficiales del gobierno de Canadá</span></li>
+          <li><a href="https://yconic.com/scholarships" target="_blank" rel="noopener">Yconic</a><span>Becas y ayudas para Canadá</span></li>
+        </ul>
+      </div>
+      <div class="becas-col">
+        <h3>🎓 Máster</h3>
+        <ul>
+          <li><a href="https://www.profellow.com/" target="_blank" rel="noopener">ProFellow</a><span>Fellowships y becas de posgrado a nivel global</span></li>
+          <li><a href="https://eca.state.gov/fulbright" target="_blank" rel="noopener">Fulbright Program</a><span>Becas de EE. UU. para estudiantes internacionales</span></li>
+          <li><a href="https://www.iie.org/" target="_blank" rel="noopener">IIE – Institute of International Education</a><span>Financiamiento y programas para estudiar en EE. UU.</span></li>
+          <li><a href="https://www.scholarshipscanada.com/" target="_blank" rel="noopener">ScholarshipsCanada.com</a><span>Base de datos de becas de posgrado en Canadá</span></li>
+        </ul>
+      </div>
+      <div class="becas-col">
+        <h3>🎓 PhD</h3>
+        <ul>
+          <li><a href="https://www.vanier.gc.ca/" target="_blank" rel="noopener">Vanier Canada Graduate Scholarships</a><span>Beca doctoral insignia del gobierno de Canadá</span></li>
+          <li><a href="https://www.findaphd.com/" target="_blank" rel="noopener">FindAPhD.com</a><span>Buscador global de posiciones y becas doctorales</span></li>
+          <li><a href="https://www.nserc-crsng.gc.ca/" target="_blank" rel="noopener">NSERC – Canada Graduate Scholarships</a><span>Financiamiento doctoral en ciencias en Canadá</span></li>
+          <li><a href="https://eca.state.gov/fulbright" target="_blank" rel="noopener">Fulbright Foreign Student Program</a><span>También aplica para investigación doctoral en EE. UU.</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="becas-disclaimer">Estos son directorios y programas externos, no soy afiliado ni garantizo resultados de aplicación — son el punto de partida que a mí me hubiera gustado tener.</p>
+  </div>
+</section>
+
+<section id="coaching">
+  <div class="wrap">
+    <span class="eyebrow" style="color:#e56a1f;">Coaching 1:1</span>
+    <h2 style="font-size:clamp(1.7rem,3vw,2.3rem);max-width:640px;margin-bottom:10px;">Trabajemos juntos tu cuerpo, tu cabeza y tu disciplina.</h2>
+    <p style="color:var(--text-dark-muted);max-width:640px;margin-bottom:10px;">Elige el enfoque que necesitas ahora.</p>
+    <span class="note-edit">[EDITAR] Precios estimados a partir de tarifas de mercado para coaching similar — ajústalos cuando definas los tuyos</span>
+
+    <div class="coach-grid">
+      <div class="coach-card">
+        <h3>Estudios & Productividad</h3>
+        <div class="price">$75 USD / mes</div>
+        <ul>
+          <li>Sistema de organización académica personalizado</li>
+          <li>Técnicas de estudio basadas en evidencia</li>
+          <li>Manejo del tiempo para estudiantes internacionales</li>
+          <li>Check-ins semanales</li>
+        </ul>
+        <a href="#contacto" class="btn btn-outline-dark btn-block">Aplicar</a>
+      </div>
+      <div class="coach-card">
+        <h3>Nutrición & Entrenamiento</h3>
+        <div class="price">GRATIS</div>
+        <ul>
+          <li>Programa PHAT completo (Excel): fuerza + hipertrofia</li>
+          <li>Programa Híbrido + HYROX (Excel): músculo + resistencia</li>
+          <li>Guía base de nutrición, sin dietas extremas</li>
+          <li>Estructura semanal lista para usar</li>
+          <li>Solo dejas tus datos y te la envío</li>
+        </ul>
+        <a href="#plan-gratis" class="btn btn-outline-dark btn-block">Descargar gratis</a>
+      </div>
+      <div class="coach-card featured">
+        <span class="ribbon">Más completo</span>
+        <h3>Programa Integral 1:1</h3>
+        <div class="price">$85 USD / mes</div>
+        <ul>
+          <li>Estudios y productividad + nutrición + entrenamiento</li>
+          <li>Enfoque en salud, energía e hipertrofia</li>
+          <li>Rutina diaria completa (sueño, foco, ejercicio)</li>
+          <li>Acompañamiento cercano y ajustes continuos</li>
+        </ul>
+        <a href="#contacto" class="btn btn-warm btn-block">Aplicar ahora →</a>
+      </div>
+    </div>
+
+    <span class="note-edit">✅ Conectado a Google Sheets: cada registro se guarda automáticamente y sin duplicados. Tus datos se piden una sola vez para todo el sitio.</span>
+    <div id="plan-gratis">
+    <div class="contact-panel" id="plangratis-locked" style="margin-bottom:56px;">
+      <div>
+        <h3>Descarga gratis tus programas de entrenamiento y nutrición</h3>
+        <p>Incluye tus dos programas de entrenamiento completos — PHAT (Power Hypertrophy Adaptive Training) e Híbrido + HYROX — en Excel, más una guía base de nutrición que te envío directo a tu correo. Un solo registro para todo.</p>
+        <div class="contact-alt">
+          <a href="mailto:youssefbustoss@gmail.com">✉️ youssefbustoss@gmail.com</a>
+        </div>
+      </div>
+      <form id="formPlanGratis" data-interes="Plan gratis: PHAT + Híbrido/HYROX + nutrición">
+        <div class="field">
+          <label for="nombre-gratis">Nombre</label>
+          <input type="text" id="nombre-gratis" name="nombre" required>
+        </div>
+        <div class="field">
+          <label for="apellido-gratis">Apellido</label>
+          <input type="text" id="apellido-gratis" name="apellido" required>
+        </div>
+        <div class="field">
+          <label for="correo-gratis">Correo</label>
+          <input type="email" id="correo-gratis" name="correo" required>
+        </div>
+        <div class="field">
+          <label for="celular-gratis">Celular</label>
+          <div class="phone-row">
+            <select id="codigo-gratis" name="codigo_pais" aria-label="Código de país">
+              <option value="+57" data-pais="Colombia" selected>🇨🇴 Colombia +57</option>
+              <option value="+52" data-pais="México">🇲🇽 México +52</option>
+              <option value="+51" data-pais="Perú">🇵🇪 Perú +51</option>
+              <option value="+56" data-pais="Chile">🇨🇱 Chile +56</option>
+              <option value="+54" data-pais="Argentina">🇦🇷 Argentina +54</option>
+              <option value="+593" data-pais="Ecuador">🇪🇨 Ecuador +593</option>
+              <option value="+58" data-pais="Venezuela">🇻🇪 Venezuela +58</option>
+              <option value="+591" data-pais="Bolivia">🇧🇴 Bolivia +591</option>
+              <option value="+595" data-pais="Paraguay">🇵🇾 Paraguay +595</option>
+              <option value="+598" data-pais="Uruguay">🇺🇾 Uruguay +598</option>
+              <option value="+506" data-pais="Costa Rica">🇨🇷 Costa Rica +506</option>
+              <option value="+507" data-pais="Panamá">🇵🇦 Panamá +507</option>
+              <option value="+502" data-pais="Guatemala">🇬🇹 Guatemala +502</option>
+              <option value="+503" data-pais="El Salvador">🇸🇻 El Salvador +503</option>
+              <option value="+504" data-pais="Honduras">🇭🇳 Honduras +504</option>
+              <option value="+505" data-pais="Nicaragua">🇳🇮 Nicaragua +505</option>
+              <option value="+1" data-pais="Estados Unidos">🇺🇸 Estados Unidos +1</option>
+              <option value="+1" data-pais="Canadá">🇨🇦 Canadá +1</option>
+              <option value="+1" data-pais="República Dominicana">🇩🇴 Rep. Dominicana +1</option>
+              <option value="+34" data-pais="España">🇪🇸 España +34</option>
+              <option value="+0" data-pais="Otro">🌍 Otro</option>
+            </select>
+            <input type="tel" id="celular-gratis" name="celular" placeholder="3001234567" required>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-warm btn-block">Descargar mi plan gratis →</button>
+        <p class="form-status" id="statusPlanGratis"></p>
+      </form>
+    </div>
+
+    <div class="phat-gate" id="plangratis-quick" style="display:none;margin-bottom:56px;">
+      <div class="lock-icon">🔓</div>
+      <h3>Ya tenemos tus datos</h3>
+      <p>Ya te registraste antes con <strong id="plangratis-quick-email"></strong>. Confirma para recibir este recurso sin volver a llenar el formulario.</p>
+      <button type="button" class="btn btn-warm btn-block" id="plangratis-quick-btn">Quiero el plan con mis datos →</button>
+      <p class="form-status" id="statusPlangratisQuick"></p>
+      <a href="#" id="plangratis-quick-switch" style="display:inline-block;margin-top:12px;font-size:.82rem;color:var(--text-muted);">¿No eres tú? Usa otros datos</a>
+    </div>
+
+    <div class="phat-unlocked" id="plangratis-unlocked" style="display:none;margin-bottom:56px;">
+      <h3>✅ ¡Listo, ya tienes acceso!</h3>
+      <p>Descarga ya tus programas (Excel): PHAT — rutina de los 5 días + progresión automática de 6 semanas — e Híbrido + HYROX — 4 días de pesas + 2 de cardio funcional. Tu guía de nutrición te la envío directo a tu correo.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;">
+        <a href="PHAT-programa-hipertrofia.xlsx" download class="btn btn-warm">Descargar PHAT (Excel) →</a>
+        <a href="Hybrid-Physique-HYROX-Youssef.xlsx" download class="btn btn-warm">Descargar Híbrido + HYROX (Excel) →</a>
+      </div>
+    </div>
+    </div>
+
+    <div class="contact-panel" id="contacto">
+      <div>
+        <h3>Aplica al coaching 1:1</h3>
+        <p>Cuéntame en qué punto estás y qué quieres lograr. Te respondo personalmente para ver si encajamos y armar tu plan.</p>
+        <div class="contact-alt">
+          <a href="mailto:youssefbustoss@gmail.com">✉️ youssefbustoss@gmail.com</a>
+          <a href="https://www.instagram.com/youssefbustoss_/" target="_blank" rel="noopener">📩 DM por Instagram</a>
+          <a href="https://www.tiktok.com/@youssef.ybs" target="_blank" rel="noopener">🎵 DM por TikTok</a>
+        </div>
+      </div>
+      <form id="formContacto">
+        <div class="field">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" required>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="correo" required>
+        </div>
+        <div class="field">
+          <label for="programa">Programa que te interesa</label>
+          <select id="programa" name="interes">
+            <option>Estudios & Productividad</option>
+            <option>Nutrición & Entrenamiento (plan gratis)</option>
+            <option>Físico Híbrido & HYROX</option>
+            <option>Programa Integral 1:1</option>
+            <option>Asesoría en péptidos</option>
+            <option>Aún no lo tengo claro</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="mensaje">Cuéntame tu objetivo</label>
+          <textarea id="mensaje" name="mensaje" placeholder="Ej: quiero ganar músculo, mejorar mis hábitos de estudio y tener más energía..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-warm btn-block">Enviar aplicación →</button>
+        <p class="form-status" id="statusContacto"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="section-dark" id="neuropeptides">
+  <div class="wrap">
+    <div class="pep-panel">
+      <div>
+        <span class="ribbon2">Próximamente</span>
+        <h3>NeuroPeptides</h3>
+        <p>Mi próximo proyecto: ciencia de péptidos aplicada al rendimiento, la recuperación y la neurociencia del cuerpo. Todavía en construcción — únete a la lista de espera para ser de los primeros en enterarte cuando lance.</p>
+        <form class="pep-form" id="formPeptides" data-interes="NeuroPeptides: lista de espera">
+          <input type="email" name="correo" placeholder="Tu email" required>
+          <button type="submit" class="btn btn-warm">Unirme a la lista →</button>
+        </form>
+        <p class="form-status" id="statusPeptides" style="margin-top:10px;"></p>
+      </div>
+      <div class="pep-visual">
+        <svg width="120" height="120" viewBox="0 0 160 160" role="img" aria-label="Logo NeuroPeptide Lab">
+          <defs>
+            <linearGradient id="pv-grad" x1="46" y1="34" x2="114" y2="134">
+              <stop offset="0" stop-color="#4C6FFF"/>
+              <stop offset="1" stop-color="#9B5DE5"/>
+            </linearGradient>
+            <radialGradient id="pv-glow">
+              <stop offset="0" stop-color="#FFFFFF"/>
+              <stop offset="1" stop-color="#9B5DE5" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <rect x="64" y="18" width="32" height="16" rx="4" fill="none" stroke="#F5F5F7" stroke-width="4"/>
+          <rect x="46" y="34" width="68" height="100" rx="16" fill="none" stroke="#F5F5F7" stroke-width="4"/>
+          <line x1="64" y1="55" x2="64" y2="115" stroke="url(#pv-grad)" stroke-width="6" stroke-linecap="round"/>
+          <line x1="96" y1="55" x2="96" y2="115" stroke="url(#pv-grad)" stroke-width="6" stroke-linecap="round"/>
+          <line x1="64" y1="55" x2="96" y2="115" stroke="url(#pv-grad)" stroke-width="6" stroke-linecap="round"/>
+          <line x1="64" y1="95" x2="53" y2="89" stroke="#4C6FFF" stroke-width="4" stroke-linecap="round"/>
+          <line x1="64" y1="75" x2="75" y2="69" stroke="#4C6FFF" stroke-width="4" stroke-linecap="round"/>
+          <line x1="96" y1="75" x2="107" y2="69" stroke="#9B5DE5" stroke-width="4" stroke-linecap="round"/>
+          <line x1="96" y1="95" x2="85" y2="101" stroke="#9B5DE5" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="80" cy="85" r="12" fill="url(#pv-glow)"/>
+          <circle cx="80" cy="85" r="4" fill="#FFFFFF"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="libros">
+  <div class="wrap">
+    <span class="eyebrow" style="color:#e56a1f;">Mis libros favoritos</span>
+    <h2 style="font-size:clamp(1.7rem,3vw,2.3rem);max-width:640px;margin-bottom:6px;">Lo que leo para entrenar la cabeza tanto como el cuerpo.</h2>
+    <span class="note-edit">[EDITAR] Lista de ejemplo — reemplaza con tus favoritos reales</span>
+    <div class="books-grid">
+      <div class="book-card">
+        <div class="book-cover">Por Qué Dormimos</div>
+        <div class="book-meta"><div class="t">Por Qué Dormimos</div><div class="a">Matthew Walker</div></div>
+      </div>
+      <div class="book-card">
+        <div class="book-cover">Hábitos Atómicos</div>
+        <div class="book-meta"><div class="t">Hábitos Atómicos</div><div class="a">James Clear</div></div>
+      </div>
+      <div class="book-card">
+        <div class="book-cover">No Puedes Herirme</div>
+        <div class="book-meta"><div class="t">No Puedes Herirme</div><div class="a">David Goggins</div></div>
+      </div>
+      <div class="book-card">
+        <div class="book-cover">Feel-Good Productivity</div>
+        <div class="book-meta"><div class="t">Feel-Good Productivity</div><div class="a">Ali Abdaal</div></div>
+      </div>
+      <div class="book-card">
+        <div class="book-cover">El Cuerpo Lleva la Cuenta</div>
+        <div class="book-meta"><div class="t">El Cuerpo Lleva la Cuenta</div><div class="a">Bessel van der Kolk</div></div>
+      </div>
+      <div class="book-card">
+        <div class="book-cover">Outlive</div>
+        <div class="book-meta"><div class="t">Outlive</div><div class="a">Peter Attia</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="quote-banner">
+  <div class="wrap quote-list">
+    <p>No necesitas <span>experiencia</span>. Solo necesitas empezar.</p>
+    <p>El camino <span>se hace al andar</span> — nadie lo tiene resuelto antes del primer paso.</p>
+    <p>Muerde <span>más de lo que puedas masticar</span>, y aprende a masticar en el camino.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a href="#inicio" class="logo">Youssef<span>.</span>Bustos</a>
+        <p style="margin-top:14px;font-size:.9rem;max-width:320px;">Estudiante de Neurociencia en la Universidad de Toronto. Fitness, productividad y neurociencia aplicada, para estudiantes latinoamericanos que quieren explotar su potencial.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/youssefbustoss_/" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+          <a href="https://www.tiktok.com/@youssef.ybs" target="_blank" rel="noopener" aria-label="TikTok">TT</a>
+          <a href="https://www.linkedin.com/search/results/people/?keywords=Youssef%20Bustos%20Saad" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+        </div>
+      </div>
+      <div>
+        <h4>Explora</h4>
+        <ul>
+          <li><a href="#historia">Mi historia</a></li>
+          <li><a href="#entrenamiento">Entrenamiento</a></li>
+          <li><a href="#becas">Becas</a></li>
+          <li><a href="#libros">Libros</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Trabaja conmigo</h4>
+        <ul>
+          <li><a href="#coaching">Coaching 1:1</a></li>
+          <li><a href="#neuropeptides">NeuroPeptides</a></li>
+          <li><a href="mailto:youssefbustoss@gmail.com">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Youssef Bustos. Todos los derechos reservados.</span>
+      <span>Hecho con disciplina, cafeína y algo de neurociencia.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const burger = document.getElementById('burgerBtn');
+  const navLinks = document.getElementById('navLinks');
+  burger.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+  });
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => navLinks.classList.remove('open'));
+  });
+
+  /* ===== Registro automático en Google Sheets (sin duplicados por correo) =====
+     1) Sigue las instrucciones que te di para crear el Google Sheet + Apps Script.
+     2) Pega aquí la URL que termina en /exec que te da "Implementar > Nueva implementación".
+  */
+  const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw9Jjj0WPkbgqtGMyC5R4r1VOZh5youzZoAB4--l5W9aROuI4TBH66HoAuhXn65zivYjQ/exec";
+
+  function isConfigured(){
+    return APPS_SCRIPT_URL && APPS_SCRIPT_URL.indexOf('https://script.google.com') === 0;
+  }
+
+  /* ===== Identidad compartida: los datos se piden una sola vez para todo el sitio ===== */
+  const IDENTITY_KEY = 'ybs_identity';
+
+  function getIdentity(){
+    try { return JSON.parse(localStorage.getItem(IDENTITY_KEY) || 'null'); } catch(e){ return null; }
+  }
+  function saveIdentity(data){
+    const current = getIdentity() || {};
+    const merged = {
+      nombre: data.nombre || current.nombre || '',
+      apellido: data.apellido || current.apellido || '',
+      correo: data.correo || current.correo || '',
+      celular: data.celular || current.celular || '',
+      pais: data.pais || current.pais || ''
+    };
+    localStorage.setItem(IDENTITY_KEY, JSON.stringify(merged));
+  }
+  function clearIdentity(){
+    localStorage.removeItem(IDENTITY_KEY);
+  }
+
+  async function sendToSheet(payload){
+    if (!isConfigured()) return false;
+    try{
+      await fetch(APPS_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(payload)
+      });
+      return true;
+    }catch(err){
+      return false;
+    }
+  }
+
+  async function submitToSheet(form, statusEl, interesFijo){
+    const btn = form.querySelector('button[type="submit"]');
+    const data = {};
+    new FormData(form).forEach((value, key) => { data[key] = value; });
+    if (interesFijo) data.interes = interesFijo;
+
+    const paisSelect = form.querySelector('select[name="codigo_pais"]');
+    if (paisSelect){
+      const opt = paisSelect.selectedOptions[0];
+      data.pais = opt ? opt.dataset.pais : '';
+      if (data.celular){
+        data.celular = (paisSelect.value + ' ' + data.celular).trim();
+      }
+      delete data.codigo_pais;
+    }
+
+    if (!isConfigured()){
+      statusEl.textContent = 'Formulario en configuración — mientras tanto escríbeme directo a youssefbustoss@gmail.com';
+      statusEl.className = 'form-status err';
+      return false;
+    }
+
+    btn.disabled = true;
+    const originalText = btn.textContent;
+    btn.textContent = 'Enviando...';
+    statusEl.textContent = '';
+    statusEl.className = 'form-status';
+
+    const ok = await sendToSheet(data);
+    btn.disabled = false;
+    btn.textContent = originalText;
+
+    if (ok){
+      statusEl.textContent = '¡Listo! Tus datos quedaron registrados 🙌';
+      statusEl.className = 'form-status ok';
+      saveIdentity(data);
+      form.reset();
+      return true;
+    } else {
+      statusEl.textContent = 'No se pudo enviar. Escríbeme directo a youssefbustoss@gmail.com';
+      statusEl.className = 'form-status err';
+      return false;
+    }
+  }
+
+  /* ===== Compuertas inteligentes: bloqueado / un clic con datos guardados / desbloqueado ===== */
+  function show(el){ if (el) el.style.display = 'block'; }
+  function hide(el){ if (el) el.style.display = 'none'; }
+
+  function initGate(prefix, interesTag, onChange){
+    const locked = document.getElementById(prefix + '-locked');
+    const quick = document.getElementById(prefix + '-quick');
+    const unlocked = document.getElementById(prefix + '-unlocked');
+    const doneKey = 'ybs_unlocked_' + prefix;
+    const quickStatus = document.getElementById('status' + prefix.charAt(0).toUpperCase() + prefix.slice(1) + 'Quick');
+
+    function renderState(){
+      const identity = getIdentity();
+      if (localStorage.getItem(doneKey) === 'true'){
+        hide(locked); hide(quick); show(unlocked);
+      } else if (identity && identity.correo){
+        hide(locked); show(quick); hide(unlocked);
+        const emailEl = document.getElementById(prefix + '-quick-email');
+        if (emailEl) emailEl.textContent = identity.correo;
+      } else {
+        show(locked); hide(quick); hide(unlocked);
+      }
+      if (onChange) onChange();
+    }
+    renderState();
+
+    const quickBtn = document.getElementById(prefix + '-quick-btn');
+    if (quickBtn){
+      quickBtn.addEventListener('click', async () => {
+        const identity = getIdentity();
+        if (!identity) return;
+        quickBtn.disabled = true;
+        const originalText = quickBtn.textContent;
+        quickBtn.textContent = 'Desbloqueando...';
+        const ok = await sendToSheet(Object.assign({}, identity, { interes: interesTag }));
+        quickBtn.disabled = false;
+        quickBtn.textContent = originalText;
+        if (ok){
+          localStorage.setItem(doneKey, 'true');
+          renderState();
+        } else if (quickStatus){
+          quickStatus.textContent = 'No se pudo desbloquear. Intenta de nuevo.';
+          quickStatus.className = 'form-status err';
+        }
+      });
+    }
+
+    const switchLink = document.getElementById(prefix + '-quick-switch');
+    if (switchLink){
+      switchLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        clearIdentity();
+        renderState();
+      });
+    }
+
+    return renderState;
+  }
+
+  /* ===== Los CTA de PHAT e Híbrido+HYROX son punteros al mismo registro de "Plan gratis" ===== */
+  function renderProgramCta(prefix, cfg){
+    const box = document.getElementById(prefix + '-cta');
+    if (!box) return;
+    const icon = document.getElementById(prefix + '-cta-icon');
+    const title = document.getElementById(prefix + '-cta-title');
+    const text = document.getElementById(prefix + '-cta-text');
+    const btn = document.getElementById(prefix + '-cta-btn');
+    if (localStorage.getItem('ybs_unlocked_plangratis') === 'true'){
+      icon.textContent = '✅';
+      title.textContent = cfg.unlockedTitle;
+      text.textContent = cfg.unlockedText;
+      btn.textContent = cfg.unlockedBtn;
+      btn.setAttribute('href', cfg.file);
+      btn.setAttribute('download', '');
+    } else {
+      icon.textContent = '🔒';
+      title.textContent = cfg.lockedTitle;
+      text.textContent = cfg.lockedText;
+      btn.textContent = 'Ir a desbloquear mi plan gratis →';
+      btn.setAttribute('href', '#plan-gratis');
+      btn.removeAttribute('download');
+    }
+  }
+
+  function renderPhatCta(){
+    renderProgramCta('phat', {
+      file: 'PHAT-programa-hipertrofia.xlsx',
+      unlockedTitle: 'Tu programa PHAT ya está desbloqueado',
+      unlockedText: 'Descarga el Excel completo: rutina de los 5 días + hoja de progresión automática de 6 semanas.',
+      unlockedBtn: 'Descargar programa PHAT (Excel) →',
+      lockedTitle: 'El PHAT es tu rutina dentro del plan gratis de entrenamiento y nutrición',
+      lockedText: 'Es el mismo recurso — no llenes otro formulario. Desbloquéalo una vez en "Plan gratis" y accedes al Excel de PHAT, al Híbrido + HYROX y a tu guía de nutrición juntos.'
+    });
+  }
+
+  function renderHybridCta(){
+    renderProgramCta('hybrid', {
+      file: 'Hybrid-Physique-HYROX-Youssef.xlsx',
+      unlockedTitle: 'Tu programa Híbrido + HYROX ya está desbloqueado',
+      unlockedText: 'Descarga el Excel completo: 4 días de pesas + 2 de cardio funcional + seguimiento de 12 semanas.',
+      unlockedBtn: 'Descargar Híbrido + HYROX (Excel) →',
+      lockedTitle: 'El Híbrido + HYROX es parte de tu plan gratis de entrenamiento y nutrición',
+      lockedText: 'Es el mismo recurso — no llenes otro formulario. Desbloquéalo una vez en "Plan gratis" y accedes al Excel de PHAT, al Híbrido + HYROX y a tu guía de nutrición juntos.'
+    });
+  }
+
+  function renderProgramCtas(){
+    renderPhatCta();
+    renderHybridCta();
+  }
+
+  const renderPlanGate = initGate('plangratis', 'Plan gratis: PHAT + Híbrido/HYROX + nutrición', renderProgramCtas);
+
+  [
+    { id: 'formPlanGratis', statusId: 'statusPlanGratis', gate: 'plangratis' },
+    { id: 'formContacto', statusId: 'statusContacto' },
+    { id: 'formPeptides', statusId: 'statusPeptides' }
+  ].forEach(({id, statusId, gate}) => {
+    const form = document.getElementById(id);
+    const statusEl = document.getElementById(statusId);
+    if (!form) return;
+
+    const identity = getIdentity();
+    if (identity){
+      const nombreInput = form.querySelector('input[name="nombre"]');
+      const correoInput = form.querySelector('input[name="correo"]');
+      if (nombreInput && !nombreInput.value) nombreInput.value = identity.nombre || '';
+      if (correoInput && !correoInput.value) correoInput.value = identity.correo || '';
+    }
+
+    form.addEventListener('submit', async (ev) => {
+      ev.preventDefault();
+      const ok = await submitToSheet(form, statusEl, form.dataset.interes || null);
+      if (ok && gate === 'plangratis'){
+        localStorage.setItem('ybs_unlocked_' + gate, 'true');
+        renderPlanGate();
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
